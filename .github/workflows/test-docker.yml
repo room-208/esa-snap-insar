@@ -16,4 +16,4 @@ jobs:
       
       - name: Run unittest in Docker
         run: |
-          docker run --rm esa-snap python -m unittest discover /root/.snap/snap-python/esa_snappy/tests
+          docker run --rm -w /root/.snap/snap-python/esa_snappy/tests esa-snap python -m unittest discover
