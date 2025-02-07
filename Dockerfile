@@ -36,4 +36,4 @@ RUN pip install "numpy<2"
 WORKDIR /root/.snap/snap-python/esa_snappy/tests
 RUN python -m unittest discover
 
-WORKDIR /app
+WORKDIR /workspace
