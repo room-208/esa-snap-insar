@@ -32,8 +32,3 @@ RUN sh snappy-conf /usr/local/bin/python
 
 ENV PYTHONPATH=/root/.snap/snap-python
 RUN pip install "numpy<2"
-
-WORKDIR /root/.snap/snap-python/esa_snappy/tests
-RUN python -m unittest discover
-
-WORKDIR /workspace

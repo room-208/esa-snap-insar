@@ -1,0 +1,19 @@
+name: Test SNAP in Docker
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Build Docker image
+        run: |
+          docker build -t esa-snap .
+      
+      - name: Run unittest in Docker
+        run: |
+          docker run --rm esa-snap python -m unittest discover /root/.snap/snap-python/esa_snappy/tests
