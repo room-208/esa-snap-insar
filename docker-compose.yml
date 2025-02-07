@@ -1,0 +1,12 @@
+services:
+  esa-snap-insar:
+    build:
+      context: .
+    volumes:
+      - ./:/workspace
+      - vscode-extensions:/root/.vscode-server/extensions/
+    tty: true
+    working_dir: /workspace
+
+volumes:
+  vscode-extensions:
