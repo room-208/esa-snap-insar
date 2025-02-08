@@ -32,3 +32,7 @@ RUN sh snappy-conf /usr/local/bin/python
 
 ENV PYTHONPATH=/root/.snap/snap-python
 RUN pip install "numpy<2"
+
+# fix "Error in SAR image corregistration: Error: [Nodeld: CreateStack] org.jblas.NativeBlas.dgemm(CCIIID[DII[DIID[DII)V)"
+# https://forum.step.esa.int/t/error-in-sar-image-corregistration-error-nodeld-createstack-org-jblas-nativeblas-dgemm-cciiid-dii-diid-dii-v/12023/1
+RUN apt-get update && apt-get install -y libgfortran5
