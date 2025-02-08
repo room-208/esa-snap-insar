@@ -87,6 +87,7 @@ def goldstein_phase_filtering(product: Product) -> Product:
 def terrain_correction(product: Product) -> Product:
     parameters = HashMap()
     parameters.put("demName", "SRTM 3Sec")
+    parameters.put("sourceBands", ",".join(product.getBandNames()))
     return GPF.createProduct("Terrain-Correction", parameters, product)
 
 
